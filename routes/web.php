@@ -55,6 +55,10 @@ Route::get('/pembayaranpembelian', 'PembayaranPembelianController@index')->name(
 Route::get('/penerimaanbarang', 'PenerimaanBarangController@index')->name('penerimaanbarang');
 
 Route::get('/masterbahan', 'MasterBahanController@index')->name('masterbahan');
+Route::get('/masterbahan/getmasterbahan', 'MasterBahanController@getmasterbahan')->name('getmasterbahan');
+Route::post('/masterbahan/addmasterbahan', 'MasterBahanController@addmasterbahan')->name('addmasterbahan');
+Route::post('/masterbahan/updatemasterbahan', 'MasterBahanController@updatemasterbahan')->name('updatemasterbahan');
+Route::delete('/masterbahan/deletemasterbahan', 'MasterBahanController@deletemasterbahan')->name('deletemasterbahan');
 
 Route::get('/masterbarang', 'MasterBarangController@index')->name('masterbarang');
 
