@@ -77,7 +77,7 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="nama_role" class="control-label col-lg-2">Name</label>
-                <input type="text" name="nama_role" class="form-control" id="nama_role" required>
+                <input type="text" name="nama_role" class="form-control" id="nama_role" required autocomplete="off">
                 <span class="help-block" id="nama_role_error"></span>
             </div>
             <div class="form-group text-center">
@@ -101,7 +101,7 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="nama_roleuser" class="control-label col-lg-2">Name</label>
-                <input type="text" name="nama_roleuser" class="form-control" id="nama_roleuser" readonly>
+                <input type="text" name="nama_roleuser" class="form-control" id="nama_roleuser" readonly autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="role_roleuser" class="control-label col-lg-2">Role</label>

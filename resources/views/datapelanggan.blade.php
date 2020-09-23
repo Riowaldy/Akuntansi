@@ -60,22 +60,22 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="id_pelanggan_tambah" class="control-label col-lg-2">ID</label>
-                <input type="text" name="id_pelanggan_tambah" class="form-control" id="id_pelanggan_tambah" required>
+                <input type="text" name="id_pelanggan_tambah" class="form-control" id="id_pelanggan_tambah" required autocomplete="off">
                 <span class="help-block" id="id_pelanggan_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="nama_pelanggan_tambah" class="control-label col-lg-2">Nama</label>
-                <input type="text" name="nama_pelanggan_tambah" class="form-control" id="nama_pelanggan_tambah" required>
+                <input type="text" name="nama_pelanggan_tambah" class="form-control" id="nama_pelanggan_tambah" required autocomplete="off">
                 <span class="help-block" id="nama_pelanggan_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="telp_pelanggan_tambah" class="control-label col-lg-2">Telp</label>
-                <input type="text" name="telp_pelanggan_tambah" class="form-control" id="telp_pelanggan_tambah" required>
+                <input type="text" name="telp_pelanggan_tambah" class="form-control" id="telp_pelanggan_tambah" required autocomplete="off">
                 <span class="help-block" id="telp_pelanggan_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="alamat_pelanggan_tambah" class="control-label col-lg-2">Alamat</label>
-                <input type="text" name="alamat_pelanggan_tambah" class="form-control" id="alamat_pelanggan_tambah" required>
+                <input type="text" name="alamat_pelanggan_tambah" class="form-control" id="alamat_pelanggan_tambah" required autocomplete="off">
                 <span class="help-block" id="alamat_pelanggan_error_tambah"></span>
             </div>
             <div class="form-group text-center">
@@ -99,22 +99,22 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="id_pelanggan" class="control-label col-lg-2">ID</label>
-                <input type="text" name="id_pelanggan" class="form-control" id="id_pelanggan" required>
+                <input type="text" name="id_pelanggan" class="form-control" id="id_pelanggan" required autocomplete="off">
                 <span class="help-block" id="id_pelanggan_error"></span>
             </div>
             <div class="form-group">
                 <label for="nama_pelanggan" class="control-label col-lg-2">Name</label>
-                <input type="text" name="nama_pelanggan" class="form-control" id="nama_pelanggan" required>
+                <input type="text" name="nama_pelanggan" class="form-control" id="nama_pelanggan" required autocomplete="off">
                 <span class="help-block" id="nama_pelanggan_error"></span>
             </div>
             <div class="form-group">
                 <label for="telp_pelanggan" class="control-label col-lg-2">Telp</label>
-                <input type="text" name="telp_pelanggan" class="form-control" id="telp_pelanggan" required>
+                <input type="text" name="telp_pelanggan" class="form-control" id="telp_pelanggan" required autocomplete="off">
                 <span class="help-block" id="telp_pelanggan_error"></span>
             </div>
             <div class="form-group">
                 <label for="alamat_pelanggan" class="control-label col-lg-2">Alamat</label>
-                <input type="text" name="alamat_pelanggan" class="form-control" id="alamat_pelanggan" required>
+                <input type="text" name="alamat_pelanggan" class="form-control" id="alamat_pelanggan" required autocomplete="off">
                 <span class="help-block" id="alamat_pelanggan_error"></span>
             </div>
             <div class="form-group text-center">

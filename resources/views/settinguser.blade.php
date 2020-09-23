@@ -58,12 +58,12 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="nama_user" class="control-label col-lg-2">Name</label>
-                <input type="text" name="nama_user" class="form-control" id="nama_user" required>
+                <input type="text" name="nama_user" class="form-control" id="nama_user" required autocomplete="off">
                 <span class="help-block" id="nama_user_error"></span>
             </div>
             <div class="form-group">
                 <label for="email_user" class="control-label col-lg-2">Email</label>
-                <input type="text" name="email_user" class="form-control" id="email_user" required>
+                <input type="text" name="email_user" class="form-control" id="email_user" required autocomplete="off">
                 <span class="help-block" id="email_user_error"></span>
             </div>
             <div class="form-group text-center">
@@ -87,17 +87,17 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="nama_user_tambah" class="control-label col-lg-2">Name</label>
-                <input type="text" name="nama_user_tambah" class="form-control" id="nama_user_tambah" required>
+                <input type="text" name="nama_user_tambah" class="form-control" id="nama_user_tambah" required autocomplete="off">
                 <span class="help-block" id="nama_user_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="email_user_tambah" class="control-label col-lg-2">Email</label>
-                <input type="text" name="email_user_tambah" class="form-control" id="email_user_tambah" required>
+                <input type="text" name="email_user_tambah" class="form-control" id="email_user_tambah" required autocomplete="off">
                 <span class="help-block" id="email_user_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="password_user_tambah" class="control-label col-lg-2">Password</label>
-                <input type="text" name="password_user_tambah" class="form-control" id="password_user_tambah" required>
+                <input type="text" name="password_user_tambah" class="form-control" id="password_user_tambah" required autocomplete="off">
                 <span class="help-block" id="password_user_error_tambah"></span>
             </div>
             <div class="form-group text-center">

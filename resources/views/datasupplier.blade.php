@@ -59,22 +59,22 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="id_supplier_tambah" class="control-label col-lg-2">ID</label>
-                <input type="text" name="id_supplier_tambah" class="form-control" id="id_supplier_tambah" required>
+                <input type="text" name="id_supplier_tambah" class="form-control" id="id_supplier_tambah" required autocomplete="off">
                 <span class="help-block" id="id_supplier_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="nama_supplier_tambah" class="control-label col-lg-2">Nama</label>
-                <input type="text" name="nama_supplier_tambah" class="form-control" id="nama_supplier_tambah" required>
+                <input type="text" name="nama_supplier_tambah" class="form-control" id="nama_supplier_tambah" required autocomplete="off">
                 <span class="help-block" id="nama_supplier_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="telp_supplier_tambah" class="control-label col-lg-2">Telp</label>
-                <input type="text" name="telp_supplier_tambah" class="form-control" id="telp_supplier_tambah" required>
+                <input type="text" name="telp_supplier_tambah" class="form-control" id="telp_supplier_tambah" required autocomplete="off">
                 <span class="help-block" id="telp_supplier_error_tambah"></span>
             </div>
             <div class="form-group">
                 <label for="alamat_supplier_tambah" class="control-label col-lg-2">Alamat</label>
-                <input type="text" name="alamat_supplier_tambah" class="form-control" id="alamat_supplier_tambah" required>
+                <input type="text" name="alamat_supplier_tambah" class="form-control" id="alamat_supplier_tambah" required autocomplete="off">
                 <span class="help-block" id="alamat_supplier_error_tambah"></span>
             </div>
             <div class="form-group text-center">
@@ -98,22 +98,22 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="id_supplier" class="control-label col-lg-2">ID</label>
-                <input type="text" name="id_supplier" class="form-control" id="id_supplier" required>
+                <input type="text" name="id_supplier" class="form-control" id="id_supplier" required autocomplete="off">
                 <span class="help-block" id="id_supplier_error"></span>
             </div>
             <div class="form-group">
                 <label for="nama_supplier" class="control-label col-lg-2">Name</label>
-                <input type="text" name="nama_supplier" class="form-control" id="nama_supplier" required>
+                <input type="text" name="nama_supplier" class="form-control" id="nama_supplier" required autocomplete="off">
                 <span class="help-block" id="nama_supplier_error"></span>
             </div>
             <div class="form-group">
                 <label for="telp_supplier" class="control-label col-lg-2">Telp</label>
-                <input type="text" name="telp_supplier" class="form-control" id="telp_supplier" required>
+                <input type="text" name="telp_supplier" class="form-control" id="telp_supplier" required autocomplete="off">
                 <span class="help-block" id="telp_supplier_error"></span>
             </div>
             <div class="form-group">
                 <label for="alamat_supplier" class="control-label col-lg-2">Alamat</label>
-                <input type="text" name="alamat_supplier" class="form-control" id="alamat_supplier" required>
+                <input type="text" name="alamat_supplier" class="form-control" id="alamat_supplier" required autocomplete="off">
                 <span class="help-block" id="alamat_supplier_error"></span>
             </div>
             <div class="form-group text-center">
