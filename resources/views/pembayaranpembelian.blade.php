@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="main-content">
+<div class="main-content" id="main-pembayaranpembelian">
     <section class="section">
         <div class="section-header">
           <h1>Pembayaran Pembelian</h1>
@@ -73,6 +73,32 @@
                             </div>
                         </div>    
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="main-content" id="main-pembayaranpembelian-err">
+    <section class="section">
+        <div class="section-header">
+            <h1>404</h1>
+        </div>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12">
+                    <section class="section">
+                        <div class="container">
+                            <div class="page-error">
+                                <div class="page-inner">
+                                    <h1>404</h1>
+                                        <div class="page-description">
+                                        Anda tidak memiliki akses pada halaman ini.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
