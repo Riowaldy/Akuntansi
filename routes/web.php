@@ -25,6 +25,10 @@ Route::get('/penerimaan', 'PenerimaanController@index')->name('penerimaan');
 Route::get('/pembayaran', 'PembayaranController@index')->name('pembayaran');
 
 Route::get('/akunperkiraan', 'AkunPerkiraanController@index')->name('akunperkiraan');
+Route::get('/akunperkiraan/getakunperkiraan', 'AkunPerkiraanController@getakunperkiraan')->name('getakunperkiraan');
+Route::post('/akunperkiraan/addakunperkiraan', 'AkunPerkiraanController@addakunperkiraan')->name('addakunperkiraan');
+Route::post('/akunperkiraan/updateakunperkiraan', 'AkunPerkiraanController@updateakunperkiraan')->name('updateakunperkiraan');
+Route::delete('/akunperkiraan/deleteakunperkiraan', 'AkunPerkiraanController@deleteakunperkiraan')->name('deleteakunperkiraan');
 
 Route::get('/hutangpiutang', 'HutangPiutangController@index')->name('hutangpiutang');
 
