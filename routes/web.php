@@ -31,6 +31,7 @@ Route::post('/akunperkiraan/updateakunperkiraan', 'AkunPerkiraanController@updat
 Route::delete('/akunperkiraan/deleteakunperkiraan', 'AkunPerkiraanController@deleteakunperkiraan')->name('deleteakunperkiraan');
 
 Route::get('/hutangpiutang', 'HutangPiutangController@index')->name('hutangpiutang');
+Route::get('/hutangpiutang/gethutangpiutang', 'HutangPiutangController@gethutangpiutang')->name('gethutangpiutang');
 
 Route::get('/jurnal', 'JurnalController@index')->name('jurnal');
 

@@ -15,7 +15,11 @@ var pesananpenjualan = function () {
                 { 'data': 'name' },
                 { 'data': 'pesanan' },
                 { 'data': 'quantity' },
-                { 'data': 'nilai' },
+                { 
+                    'data': 'nilai', 
+                    'render': $.fn.dataTable.render.number( '.', ',', 2, 'Rp' )
+                
+                },
                 { 'data': 'invoice' },
                 {
                     'render': function (data, type, full, meta) {
@@ -31,7 +35,7 @@ var pesananpenjualan = function () {
             ],
             "order": [],
             "columnDefs": [
-                { "orderable": false, "targets": [0] }
+                { "orderable": false, "targets": [0,8] }
             ]
         });
         t.on( 'order.dt search.dt', function () {

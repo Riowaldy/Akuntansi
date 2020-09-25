@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Pesananpenjualan;
+use App\Hutangpiutang;
 
 class PesananPenjualanController extends Controller
 {
@@ -81,5 +82,16 @@ class PesananPenjualanController extends Controller
         $pesananpenjualans->nilai = $hargaTot;
         $pesananpenjualans->invoice = $request->invoice;
         $pesananpenjualans->save();
+
+        $hutangpiutangs = new Hutangpiutang();
+        $hutangpiutangs->no_transaksi = $request->no_transaksi;
+        $hutangpiutangs->jenis = 'Piutang';
+        $hutangpiutangs->tanggal = $request->tanggal;
+        $hutangpiutangs->name = $request->name;
+        $hutangpiutangs->pesanan = $request->pesanan;
+        $hutangpiutangs->quantity = $request->quantity;
+        $hutangpiutangs->nilai = $hargaTot;
+        $hutangpiutangs->invoice = $request->invoice;
+        $hutangpiutangs->save();
     }
 }
