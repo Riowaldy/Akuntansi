@@ -41,6 +41,10 @@ Route::post('/datapelanggan/updatedatapelanggan', 'DataPelangganController@updat
 Route::delete('/datapelanggan/deletedatapelanggan', 'DataPelangganController@deletedatapelanggan')->name('deletedatapelanggan');
 
 Route::get('/pesananpenjualan', 'PesananPenjualanController@index')->name('pesananpenjualan');
+Route::get('/pesananpenjualan/getpesananpenjualan', 'PesananPenjualanController@getpesananpenjualan')->name('getpesananpenjualan');
+Route::post('/pesananpenjualan/addpesananpenjualan', 'PesananPenjualanController@addpesananpenjualan')->name('addpesananpenjualan');
+Route::get('/pesananpenjualan/getdropnama', 'PesananPenjualanController@getdropnama')->name('getdropnama');
+Route::get('/pesananpenjualan/getdroppesanan', 'PesananPenjualanController@getdroppesanan')->name('getdroppesanan');
 
 Route::get('/penerimaanpenjualan', 'PenerimaanPenjualanController@index')->name('penerimaanpenjualan');
 

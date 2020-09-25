@@ -19,7 +19,7 @@ var akunperkiraan = function () {
                         html += '<div class="text-center">';
                         html += '<div class="btn-group btn-group-solid">';
                         html += '<a href="#edit" class="btn btn-primary btn-raised btn-xs" data-toggle="modal" data-target="#form-edit-akunperkiraan" id="btn-edit-akunperkiraan" title="Ubah Data"><i class="fas fa-edit"></i></a>';
-                        html += '<a href="#hapus" class="btn btn-danger btn-raised btn-xs" id="btn-hapus-akunperkiraan" title="Hapus Data"><i class="fas fa-trash"></i></a>';
+                        // html += '<a href="#hapus" class="btn btn-danger btn-raised btn-xs" id="btn-hapus-akunperkiraan" title="Hapus Data"><i class="fas fa-trash"></i></a>';
                         html += '</div>';
                         html += '</div>';
                         return html;
