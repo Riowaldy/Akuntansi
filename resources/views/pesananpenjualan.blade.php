@@ -94,7 +94,7 @@
             </div>
             <div class="form-group">
                 <label for="tanggal_pesananpenjualan_tambah" class="control-label col-lg-2">Tanggal</label>
-                <input type="text" name="tanggal_pesananpenjualan_tambah" class="form-control" id="tanggal_pesananpenjualan_tambah" required autocomplete="off">
+                <input type="text" name="tanggal_pesananpenjualan_tambah" id="tanggal_pesananpenjualan_tambah" class="form-control datepicker">
                 <span class="help-block" id="tanggal_pesananpenjualan_error_tambah"></span>
             </div>
             <div class="form-group">

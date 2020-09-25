@@ -18,6 +18,8 @@
     <link href="{{ asset('custom/library/datatables/DataTables-1.10.21/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ asset('custom/library/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('custom/library/select2/dist/css/select2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('custom/library/datepicker/datepicker.css') }}" rel="stylesheet">
+    
   </head>
 <body>
     <div id="app">
@@ -121,6 +123,7 @@
     <script src="{{ asset('custom/library/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('custom/library/nicescroll/nicescroll.js') }}"></script>
     <script src="{{ asset('custom/library/select2/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('custom/library/datepicker/datepicker.js') }}"></script>
     
     <script src="{{ asset('custom/js/stisla.js') }}"></script>
     <script src="{{ asset('custom/js/scripts.js') }}"></script>

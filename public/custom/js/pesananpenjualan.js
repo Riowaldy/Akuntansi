@@ -127,7 +127,6 @@ var pesananpenjualan = function () {
                             type : "POST",
                             data : addData,
                             success: function(res){
-                                console.log(res);
                                 $('#tablepesananpenjualan').DataTable().ajax.reload();
                                     swal({
                                         title: "Success!",
@@ -218,5 +217,8 @@ $(document).ready(function(){
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd'
+    }).datepicker("setDate", new Date());
     pesananpenjualan.init();
 });
