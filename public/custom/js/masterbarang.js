@@ -44,44 +44,36 @@ var masterbarang = function () {
         $('#btn-reset-simpanmasterbarang').click(function(){
             $("#id_barang_error_tambah").html("");
             $("#nama_barang_error_tambah").html("");
-            $("#terjual_barang_error_tambah").html("");
             $("#harga_barang_error_tambah").html("");
             $("#satuan_barang_error_tambah").html("");
             $("#id_barang_error").html("");
             $("#nama_barang_error").html("");
             $("#harga_barang_error").html("");
-            $("#terjual_barang_error").html("");
             $("#satuan_barang_error").html("");
             $("#id_barang_tambah").val("")
             $("#nama_barang_tambah").val("");
-            $("#terjual_barang_tambah").val("");
             $("#harga_barang_tambah").val("");
             $("#satuan_barang_tambah").val("");
             $("#id_barang").val("")
             $("#nama_barang").val("");
-            $("#terjual_barang").val("");
             $("#harga_barang").val("");
             $("#satuan_barang").val("");
         });
         $('#btn-reset-editmasterbarang').click(function(){
             $("#id_barang_error_tambah").html("");
             $("#nama_barang_error_tambah").html("");
-            $("#terjual_barang_error_tambah").html("");
             $("#harga_barang_error_tambah").html("");
             $("#satuan_barang_error_tambah").html("");
             $("#id_barang_error").html("");
             $("#nama_barang_error").html("");
             $("#harga_barang_error").html("");
-            $("#terjual_barang_error").html("");
             $("#satuan_barang_error").html("");
             $("#id_barang_tambah").val("")
             $("#nama_barang_tambah").val("");
-            $("#terjual_barang_tambah").val("");
             $("#harga_barang_tambah").val("");
             $("#satuan_barang_tambah").val("");
             $("#id_barang").val("")
             $("#nama_barang").val("");
-            $("#terjual_barang").val("");
             $("#harga_barang").val("");
             $("#satuan_barang").val("");
         });
@@ -109,48 +101,35 @@ var masterbarang = function () {
                         id_barang: $('#id_barang_tambah').val(),
                         name: $('#nama_barang_tambah').val(),
                         harga: $('#harga_barang_tambah').val(),
-                        terjual: $('#terjual_barang_tambah').val(),
                         satuan: $('#satuan_barang_tambah').val(),
                     };
                     if(addData.id_barang == ""){
                         $("#id_barang_error_tambah").html("<strong>Data ID Barang Kosong</strong>");
                         $("#nama_barang_error_tambah").html("");
                         $("#harga_barang_error_tambah").html("");
-                        $("#terjual_barang_error_tambah").html("");
                         $("#satuan_barang_error_tambah").html("");
                     }
                     else if(addData.name == ""){
                         $("#nama_barang_error_tambah").html("<strong>Data Nama Kosong</strong>");
                         $("#id_barang_error_tambah").html("");
                         $("#harga_barang_error_tambah").html("");
-                        $("#terjual_barang_error_tambah").html("");
                         $("#satuan_barang_error_tambah").html("");
                     }
                     else if(addData.harga == ""){
                         $("#harga_barang_error_tambah").html("<strong>Data Harga Kosong</strong>");
                         $("#id_barang_error_tambah").html("");
                         $("#nama_barang_error_tambah").html("");
-                        $("#terjual_barang_error_tambah").html("");
-                        $("#satuan_barang_error_tambah").html("");
-                    }
-                    else if(addData.harga == ""){
-                        $("#terjual_barang_error_tambah").html("<strong>Data Terjual Kosong</strong>");
-                        $("#id_barang_error_tambah").html("");
-                        $("#nama_barang_error_tambah").html("");
-                        $("#harga_barang_error_tambah").html("");
                         $("#satuan_barang_error_tambah").html("");
                     }
                     else if(addData.satuan == ""){
                         $("#satuan_barang_error_tambah").html("<strong>Data Satuan Kosong</strong>");
                         $("#id_barang_error_tambah").html("");
                         $("#nama_barang_error_tambah").html("");
-                        $("#terjual_barang_error_tambah").html("");
                         $("#harga_barang_error_tambah").html("");
                     }
                     else{
                         $("#id_barang_error_tambah").html("");
                         $("#nama_barang_error_tambah").html("");
-                        $("#terjual_barang_error_tambah").html("");
                         $("#harga_barang_error_tambah").html("");
                         $("#satuan_barang_error_tambah").html("");
                         $.ajax({
@@ -171,7 +150,6 @@ var masterbarang = function () {
                                     $('#form-tambah-masterbarang').modal('hide');
                                     $("#id_barang_tambah").val("")
                                     $("#nama_barang_tambah").val("");
-                                    $("#terjual_barang_tambah").val("");
                                     $("#harga_barang_tambah").val("");
                                     $("#satuan_barang_tambah").val("");
                                 }
@@ -204,7 +182,6 @@ var masterbarang = function () {
             $('#id_barang').val(data.id_barang);
             $('#nama_barang').val(data.name);
             $('#harga_barang').val(data.harga);
-            $('#terjual_barang').val(data.terjual);
             $('#satuan_barang').val(data.satuan);
             $('#btn-simpan-editmasterbarang').html('Simpan');
             $('#btn-reset-editmasterbarang').html('Batal');
@@ -234,35 +211,24 @@ var masterbarang = function () {
                         id_barang: $('#id_barang').val(),
                         name: $('#nama_barang').val(),
                         harga: $('#harga_barang').val(),
-                        terjual: $('#terjual_barang').val(),
                         satuan: $('#satuan_barang').val(),
                     };
                     if(update.id_barang == ""){
                         $("#id_barang_error").html("<strong>Data ID Barang Kosong</strong>");
                         $("#nama_barang_error").html("");
                         $("#harga_barang_error").html("");
-                        $("#terjual_barang_error").html("");
                         $("#satuan_barang_error").html("");
                     }
                     else if(update.name == ""){
                         $("#nama_barang_error").html("<strong>Data Nama Kosong</strong>");
                         $("#id_barang_error").html("");
                         $("#harga_barang_error").html("");
-                        $("#terjual_barang_error").html("");
                         $("#satuan_barang_error").html("");
                     }
                     else if(update.harga == ""){
                         $("#harga_barang_error").html("<strong>Data Harga Kosong</strong>");
                         $("#id_barang_error").html("");
                         $("#nama_barang_error").html("");
-                        $("#terjual_barang_error").html("");
-                        $("#satuan_barang_error").html("");
-                    }
-                    else if(update.terjual == ""){
-                        $("#terjual_barang_error").html("<strong>Data Terjual Kosong</strong>");
-                        $("#id_barang_error").html("");
-                        $("#nama_barang_error").html("");
-                        $("#harga_barang_error").html("");
                         $("#satuan_barang_error").html("");
                     }
                     else if(update.satuan == ""){
@@ -270,13 +236,11 @@ var masterbarang = function () {
                         $("#id_barang_error").html("");
                         $("#nama_barang_error").html("");
                         $("#harga_barang_error").html("");
-                        $("#terjual_barang_error").html("");
                     }
                     else{
                         $("#id_barang_error").html("");
                         $("#nama_barang_error").html("");
                         $("#harga_barang_error").html("");
-                        $("#terjual_barang_error").html("");
                         $("#satuan_barang_error").html("");
                         $.ajax({
                             url : "/masterbarang/updatemasterbarang",

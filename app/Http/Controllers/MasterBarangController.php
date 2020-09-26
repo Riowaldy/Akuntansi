@@ -42,7 +42,6 @@ class MasterBarangController extends Controller
             'id_barang' => 'required|max:255',
             'name' => 'required|max:255',
             'harga' => 'required|max:255',
-            'terjual' => 'required|max:255',
             'satuan' => 'required|max:255'
         ));
         if (Barang::where('id_barang', '=', $request->id_barang)->count() > 0) {
@@ -52,7 +51,7 @@ class MasterBarangController extends Controller
             $barangs->id_barang = $request->id_barang;
             $barangs->name = $request->name;
             $barangs->harga = $request->harga;
-            $barangs->terjual = $request->terjual;
+            $barangs->terjual = 0;
             $barangs->satuan = $request->satuan;
             $barangs->save();
         }
@@ -64,7 +63,6 @@ class MasterBarangController extends Controller
             'id_barang' => 'required|max:255',
             'name' => 'required|max:255',
             'harga' => 'required|max:255',
-            'terjual' => 'required|max:255',
             'satuan' => 'required|max:255'
         ));
         if (Barang::where('id_barang', '=', $request->id_barang)->where('id', '!=', $request->id)->count() > 0) {
@@ -74,7 +72,6 @@ class MasterBarangController extends Controller
             $barangs->id_barang = $request->id_barang;
             $barangs->name = $request->name;
             $barangs->harga = $request->harga;
-            $barangs->terjual = $request->terjual;
             $barangs->satuan = $request->satuan;
             $barangs->save();
         }

@@ -101,11 +101,6 @@
                 <span class="help-block" id="harga_barang_error_tambah"></span>
             </div>
             <div class="form-group">
-                <label for="terjual_barang_tambah" class="control-label col-lg-2">Terjual</label>
-                <input type="text" name="terjual_barang_tambah" class="form-control" id="terjual_barang_tambah" required autocomplete="off">
-                <span class="help-block" id="terjual_barang_error_tambah"></span>
-            </div>
-            <div class="form-group">
                 <label for="satuan_barang_tambah" class="control-label col-lg-2">Satuan</label>
                 <input type="text" name="satuan_barang_tambah" class="form-control" id="satuan_barang_tambah" required autocomplete="off">
                 <span class="help-block" id="satuan_barang_error_tambah"></span>
@@ -143,11 +138,6 @@
                 <label for="harga_barang" class="control-label col-lg-2">Harga</label>
                 <input type="text" name="harga_barang" class="form-control" id="harga_barang" required autocomplete="off">
                 <span class="help-block" id="harga_barang_error"></span>
-            </div>
-            <div class="form-group">
-                <label for="terjual_barang" class="control-label col-lg-2">Terjual</label>
-                <input type="text" name="terjual_barang" class="form-control" id="terjual_barang" required autocomplete="off">
-                <span class="help-block" id="terjual_barang_error"></span>
             </div>
             <div class="form-group">
                 <label for="satuan_barang" class="control-label col-lg-2">Satuan</label>
