@@ -44,9 +44,80 @@ var penerimaanpenjualan = function () {
             } );
         } ).draw();
     };
+
+    var editDataPenerimaanPenjualan = function () {
+        $('#tablepenerimaanpenjualan').on('click', '#btn-edit-penerimaanpenjualan', function () {
+            var baris = $(this).parents('tr')[0];
+            var table = $('#tablepenerimaanpenjualan').DataTable();
+            var data = table.row(baris).data();
+            id = data.id;
+            no_transaksi = data.no_transaksi;
+            tanggal = data.tanggal;
+            name = data.name;
+            pesanan = data.pesanan;
+            quantity = data.quantity;
+            nilai = data.nilai;
+            invoice = data.invoice;
+            swal({
+                title: 'Apakah Anda Yakin?',
+                text: 'Mengubah Data Penerimaan Penjualan Ini',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#2196F3',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak',
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                showLoaderOnConfirm: true
+            })
+            .then((isConfirm) => {
+                window.onkeydown = null;
+                window.onfocus = null;
+                if (isConfirm) {
+                    var updateData = {
+                        id: id,
+                        no_transaksi: no_transaksi,
+                        tanggal: tanggal,
+                        name: name,
+                        pesanan: pesanan,
+                        quantity: quantity,
+                        nilai: nilai,
+                        invoice: invoice,
+                    };
+                    $.ajax({
+                        url : "/penerimaanpenjualan/updatepenerimaanpenjualan",
+                        type : "POST",
+                        data : updateData,
+                        success: function(res){
+                            console.log(res);
+                            $('#tablepenerimaanpenjualan').DataTable().ajax.reload();
+                            swal({
+                                title: "Success!",
+                                text : "Data Berhasil Dihapus",
+                                confirmButtonColor: "#66BB6A",
+                                type : "success",
+                            });
+                        },
+                        error : function(res){
+                            swal({
+                                title: 'Error',
+                                text : data.message,
+                                type : "error",
+                                confirmButtonColor: "#EF5350",
+                            });
+                        }
+                    })
+                } else {
+                    swal("Aksi Dibatalkan!");
+                }
+            });
+        });
+    };
+    
     return {
         init: function () {
             getPenerimaanpenjualan();
+            editDataPenerimaanPenjualan();
         }
     };
 }();

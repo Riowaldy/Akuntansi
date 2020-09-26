@@ -51,8 +51,10 @@ Route::get('/pesananpenjualan/getdroppesanan', 'PesananPenjualanController@getdr
 
 Route::get('/penerimaanpenjualan', 'PenerimaanPenjualanController@index')->name('penerimaanpenjualan');
 Route::get('/penerimaanpenjualan/getpenerimaanpenjualan', 'PenerimaanPenjualanController@getpenerimaanpenjualan')->name('getpenerimaanpenjualan');
+Route::post('/penerimaanpenjualan/updatepenerimaanpenjualan', 'PenerimaanPenjualanController@updatepenerimaanpenjualan')->name('updatepenerimaanpenjualan');
 
 Route::get('/pengirimanpenjualan', 'PengirimanPenjualanController@index')->name('pengirimanpenjualan');
+Route::get('/pengirimanpenjualan/getpengirimanpenjualan', 'PengirimanPenjualanController@getpengirimanpenjualan')->name('getpengirimanpenjualan');
 
 Route::get('/datasupplier', 'DataSupplierController@index')->name('datasupplier');
 Route::get('/datasupplier/getdatasupplier', 'DataSupplierController@getdatasupplier')->name('getdatasupplier');
