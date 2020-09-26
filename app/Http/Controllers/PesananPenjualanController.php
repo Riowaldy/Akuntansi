@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Pesananpenjualan;
 use App\Hutangpiutang;
+use App\Penerimaanpenjualan;
+use App\Penerimaan;
 
 class PesananPenjualanController extends Controller
 {
@@ -93,5 +95,41 @@ class PesananPenjualanController extends Controller
         $hutangpiutangs->nilai = $hargaTot;
         $hutangpiutangs->invoice = $request->invoice;
         $hutangpiutangs->save();
+    }
+
+    public function updatepesananpenjualan(Request $request)
+    {
+        $nameVal = DB::table('pelanggans')->select('id')
+                                    ->where('name',$request->name)
+                                    ->first();
+        $barangVal = DB::table('barangs')->select('id')
+                                    ->where('name',$request->pesanan)
+                                    ->first();
+        $name = $nameVal->id;
+        $pesanan = $barangVal->id;
+        $penerimaanpenjualans = new Penerimaanpenjualan();
+        $penerimaanpenjualans->no_transaksi = $request->no_transaksi;
+        $penerimaanpenjualans->tanggal = $request->tanggal;
+        $penerimaanpenjualans->name = $name;
+        $penerimaanpenjualans->pesanan = $pesanan;
+        $penerimaanpenjualans->quantity = $request->quantity;
+        $penerimaanpenjualans->nilai = $request->nilai;
+        $penerimaanpenjualans->invoice = $request->invoice;
+        $penerimaanpenjualans->save();
+
+        $penerimaans = new Penerimaan();
+        $penerimaans->no_transaksi = $request->no_transaksi;
+        $penerimaans->tanggal = $request->tanggal;
+        $penerimaans->name = $name;
+        $penerimaans->pesanan = $pesanan;
+        $penerimaans->quantity = $request->quantity;
+        $penerimaans->nilai = $request->nilai;
+        $penerimaans->invoice = $request->invoice;
+        $penerimaans->save();
+
+        $delete = \DB::table('pesananpenjualans')->select('id')->where('no_transaksi', $request->no_transaksi);
+        $delete->delete();
+        $delete2 = \DB::table('hutangpiutangs')->select('id')->where('no_transaksi', $request->no_transaksi);
+        $delete2->delete();
     }
 }

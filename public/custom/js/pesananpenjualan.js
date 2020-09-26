@@ -45,6 +45,17 @@ var pesananpenjualan = function () {
         } ).draw();
     };
 
+    var resetData = function(){
+        $('#btn-reset-simpanpesananpenjualan').click(function(){
+            $("#notrans_pesananpenjualan_error_tambah").html("");
+            $("#tanggal_pesananpenjualan_error_tambah").html("");
+            $("#nama_pesananpenjualan_error_tambah").html("");
+            $("#pesanan_pesananpenjualan_error_tambah").html("");
+            $("#quantity_pesananpenjualan_error_tambah").html("");
+            $("#invoice_pesananpenjualan_error_tambah").html("");
+        });
+    }
+
     var tambahPesananPenjualan = function () {
         $('#btn-simpan-tambahpesananpenjualan').click(function(){
             swal({
@@ -205,13 +216,82 @@ var pesananpenjualan = function () {
         })
     };
 
+    var editDataPesananPenjualan = function () {
+        $('#tablepesananpenjualan').on('click', '#btn-edit-pesananpenjualan', function () {
+            var baris = $(this).parents('tr')[0];
+            var table = $('#tablepesananpenjualan').DataTable();
+            var data = table.row(baris).data();
+            id = data.id;
+            no_transaksi = data.no_transaksi;
+            tanggal = data.tanggal;
+            name = data.name;
+            pesanan = data.pesanan;
+            quantity = data.quantity;
+            nilai = data.nilai;
+            invoice = data.invoice;
+            swal({
+                title: 'Apakah Anda Yakin?',
+                text: 'Mengubah Data Pesanan Penjualan Ini',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#2196F3',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak',
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                showLoaderOnConfirm: true
+            })
+            .then((isConfirm) => {
+                window.onkeydown = null;
+                window.onfocus = null;
+                if (isConfirm) {
+                    var updateData = {
+                        id: id,
+                        no_transaksi: no_transaksi,
+                        tanggal: tanggal,
+                        name: name,
+                        pesanan: pesanan,
+                        quantity: quantity,
+                        nilai: nilai,
+                        invoice: invoice,
+                    };
+                    $.ajax({
+                        url : "/pesananpenjualan/updatepesananpenjualan",
+                        type : "POST",
+                        data : updateData,
+                        success: function(res){
+                            $('#tablepesananpenjualan').DataTable().ajax.reload();
+                            swal({
+                                title: "Success!",
+                                text : "Data Berhasil Dihapus",
+                                confirmButtonColor: "#66BB6A",
+                                type : "success",
+                            });
+                        },
+                        error : function(res){
+                            swal({
+                                title: 'Error',
+                                text : data.message,
+                                type : "error",
+                                confirmButtonColor: "#EF5350",
+                            });
+                        }
+                    })
+                } else {
+                    swal("Aksi Dibatalkan!");
+                }
+            });
+        });
+    };
+
     return {
         init: function () {
             getPesananPenjualan();
-            // resetData();
+            resetData();
             tambahPesananPenjualan();
             getDropNama();
             getDropPesanan();
+            editDataPesananPenjualan();
         }
     };
 }();

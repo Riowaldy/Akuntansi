@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/getmenu', 'HomeController@getMenu')->name('getmenu');
 
 Route::get('/penerimaan', 'PenerimaanController@index')->name('penerimaan');
+Route::get('/penerimaan/getpenerimaan', 'PenerimaanController@getpenerimaan')->name('getpenerimaan');
 
 Route::get('/pembayaran', 'PembayaranController@index')->name('pembayaran');
 
@@ -44,10 +45,12 @@ Route::delete('/datapelanggan/deletedatapelanggan', 'DataPelangganController@del
 Route::get('/pesananpenjualan', 'PesananPenjualanController@index')->name('pesananpenjualan');
 Route::get('/pesananpenjualan/getpesananpenjualan', 'PesananPenjualanController@getpesananpenjualan')->name('getpesananpenjualan');
 Route::post('/pesananpenjualan/addpesananpenjualan', 'PesananPenjualanController@addpesananpenjualan')->name('addpesananpenjualan');
+Route::post('/pesananpenjualan/updatepesananpenjualan', 'PesananPenjualanController@updatepesananpenjualan')->name('updatepesananpenjualan');
 Route::get('/pesananpenjualan/getdropnama', 'PesananPenjualanController@getdropnama')->name('getdropnama');
 Route::get('/pesananpenjualan/getdroppesanan', 'PesananPenjualanController@getdroppesanan')->name('getdroppesanan');
 
 Route::get('/penerimaanpenjualan', 'PenerimaanPenjualanController@index')->name('penerimaanpenjualan');
+Route::get('/penerimaanpenjualan/getpenerimaanpenjualan', 'PenerimaanPenjualanController@getpenerimaanpenjualan')->name('getpenerimaanpenjualan');
 
 Route::get('/pengirimanpenjualan', 'PengirimanPenjualanController@index')->name('pengirimanpenjualan');
 
