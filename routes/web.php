@@ -24,6 +24,7 @@ Route::get('/penerimaan', 'PenerimaanController@index')->name('penerimaan');
 Route::get('/penerimaan/getpenerimaan', 'PenerimaanController@getpenerimaan')->name('getpenerimaan');
 
 Route::get('/pembayaran', 'PembayaranController@index')->name('pembayaran');
+Route::get('/pembayaran/getpembayaran', 'PembayaranController@getpembayaran')->name('getpembayaran');
 
 Route::get('/akunperkiraan', 'AkunPerkiraanController@index')->name('akunperkiraan');
 Route::get('/akunperkiraan/getakunperkiraan', 'AkunPerkiraanController@getakunperkiraan')->name('getakunperkiraan');
