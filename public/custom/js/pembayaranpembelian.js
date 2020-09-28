@@ -45,10 +45,79 @@ var pembayaranpembelian = function () {
         } ).draw();
     };
 
+    var editDataPembayaranPembelian = function () {
+        $('#tablepembayaranpembelian').on('click', '#btn-edit-pembayaranpembelian', function () {
+            var baris = $(this).parents('tr')[0];
+            var table = $('#tablepembayaranpembelian').DataTable();
+            var data = table.row(baris).data();
+            id = data.id;
+            no_transaksi = data.no_transaksi;
+            tanggal = data.tanggal;
+            name = data.name;
+            pesanan = data.pesanan;
+            quantity = data.quantity;
+            nilai = data.nilai;
+            invoice = data.invoice;
+            swal({
+                title: 'Apakah Anda Yakin?',
+                text: 'Mengubah Data Pembayaran Pembelian Ini',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#2196F3',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak',
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                showLoaderOnConfirm: true
+            })
+            .then((isConfirm) => {
+                window.onkeydown = null;
+                window.onfocus = null;
+                if (isConfirm) {
+                    var updateData = {
+                        id: id,
+                        no_transaksi: no_transaksi,
+                        tanggal: tanggal,
+                        name: name,
+                        pesanan: pesanan,
+                        quantity: quantity,
+                        nilai: nilai,
+                        invoice: invoice,
+                    };
+                    $.ajax({
+                        url : "/pembayaranpembelian/updatepembayaranpembelian",
+                        type : "POST",
+                        data : updateData,
+                        success: function(res){
+                            console.log(res);
+                            $('#tablepembayaranpembelian').DataTable().ajax.reload();
+                            swal({
+                                title: "Success!",
+                                text : "Data Berhasil Dihapus",
+                                confirmButtonColor: "#66BB6A",
+                                type : "success",
+                            });
+                        },
+                        error : function(res){
+                            swal({
+                                title: 'Error',
+                                text : data.message,
+                                type : "error",
+                                confirmButtonColor: "#EF5350",
+                            });
+                        }
+                    })
+                } else {
+                    swal("Aksi Dibatalkan!");
+                }
+            });
+        });
+    };
+
     return {
         init: function () {
             getPembayaranPembelian();
-            // editDataPembayaranPembelian();
+            editDataPembayaranPembelian();
         }
     };
 }();

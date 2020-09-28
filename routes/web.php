@@ -71,6 +71,7 @@ Route::get('/pesananpembelian/getdroppesanan', 'PesananPembelianController@getdr
 
 Route::get('/pembayaranpembelian', 'PembayaranPembelianController@index')->name('pembayaranpembelian');
 Route::get('/pembayaranpembelian/getpembayaranpembelian', 'PembayaranPembelianController@getpembayaranpembelian')->name('getpembayaranpembelian');
+Route::post('/pembayaranpembelian/updatepembayaranpembelian', 'PembayaranPembelianController@updatepembayaranpembelian')->name('updatepembayaranpembelian');
 
 Route::get('/penerimaanbarang', 'PenerimaanBarangController@index')->name('penerimaanbarang');
 

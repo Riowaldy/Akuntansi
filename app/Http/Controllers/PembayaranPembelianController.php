@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Pembayaranpembelian;
+use App\Penerimaanbarang;
 use App\Bahan;
 
 class PembayaranPembelianController extends Controller
@@ -38,5 +38,36 @@ class PembayaranPembelianController extends Controller
         return response()->json(
             $tablepembayaranpembelian
         );
+    }
+
+    public function updatepembayaranpembelian(Request $request)
+    {
+        $nameVal = DB::table('suppliers')->select('id')
+                                    ->where('name',$request->name)
+                                    ->first();
+        $bahanVal = DB::table('bahans')->select('id','stock')
+                                    ->where('name',$request->pesanan)
+                                    ->first();
+        $name = $nameVal->id;
+        $pesanan = $bahanVal->id;
+        $stock = $bahanVal->stock;
+        $stock = $stock + $request->quantity;
+        
+        $penerimaanbarangs = new Penerimaanbarang();
+        $penerimaanbarangs->no_transaksi = $request->no_transaksi;
+        $penerimaanbarangs->tanggal = $request->tanggal;
+        $penerimaanbarangs->name = $name;
+        $penerimaanbarangs->pesanan = $pesanan;
+        $penerimaanbarangs->quantity = $request->quantity;
+        $penerimaanbarangs->nilai = $request->nilai;
+        $penerimaanbarangs->invoice = $request->invoice;
+        $penerimaanbarangs->save();
+
+        $bahans = Bahan::find($pesanan);
+        $bahans->stock = $stock;
+        $bahans->save();
+
+        $delete = \DB::table('pembayaranpembelians')->select('id')->where('no_transaksi', $request->no_transaksi);
+        $delete->delete();
     }
 }
