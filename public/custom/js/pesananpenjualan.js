@@ -142,7 +142,10 @@ var pesananpenjualan = function () {
                             type : "POST",
                             data : addData,
                             success: function(res){
-                                $('#tablepesananpenjualan').DataTable().ajax.reload();
+                                if(res == 'no_transaksierr'){
+                                    $("#notrans_pesananpenjualan_error_tambah").html("<strong>Data No Transaksi Sudah Ada</strong>");
+                                }else{
+                                    $('#tablepesananpenjualan').DataTable().ajax.reload();
                                     swal({
                                         title: "Success!",
                                         text : "Data Berhasil Ditambahkan",
@@ -156,6 +159,8 @@ var pesananpenjualan = function () {
                                     $("#pesanan_pesananpenjualan_tambah").val("");
                                     $("#quantity_pesananpenjualan_tambah").val("");
                                     $("#invoice_pesananpenjualan_tambah").val("");
+                                }
+                                
                             },
                             error : function(res){
                                 swal({

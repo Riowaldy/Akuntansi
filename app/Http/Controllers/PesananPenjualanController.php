@@ -68,33 +68,36 @@ class PesananPenjualanController extends Controller
             'quantity' => 'required|max:255',
             'invoice' => 'required|max:255'
         ));
-        
-        $pesanans = DB::table('barangs')->select('harga')
+        if (Pesananpenjualan::where('no_transaksi', '=', $request->no_transaksi)->count() > 0) {
+            return 'no_transaksierr';
+        }else{
+            $pesanans = DB::table('barangs')->select('harga')
                                     ->where('id',$request->pesanan)
                                     ->first();
-        $harga = $pesanans->harga;
-        $hargaTot = $harga * $request->quantity;
+            $harga = $pesanans->harga;
+            $hargaTot = $harga * $request->quantity;
 
-        $pesananpenjualans = new Pesananpenjualan();
-        $pesananpenjualans->no_transaksi = $request->no_transaksi;
-        $pesananpenjualans->tanggal = $request->tanggal;
-        $pesananpenjualans->name = $request->name;
-        $pesananpenjualans->pesanan = $request->pesanan;
-        $pesananpenjualans->quantity = $request->quantity;
-        $pesananpenjualans->nilai = $hargaTot;
-        $pesananpenjualans->invoice = $request->invoice;
-        $pesananpenjualans->save();
+            $pesananpenjualans = new Pesananpenjualan();
+            $pesananpenjualans->no_transaksi = $request->no_transaksi;
+            $pesananpenjualans->tanggal = $request->tanggal;
+            $pesananpenjualans->name = $request->name;
+            $pesananpenjualans->pesanan = $request->pesanan;
+            $pesananpenjualans->quantity = $request->quantity;
+            $pesananpenjualans->nilai = $hargaTot;
+            $pesananpenjualans->invoice = $request->invoice;
+            $pesananpenjualans->save();
 
-        $hutangpiutangs = new Hutangpiutang();
-        $hutangpiutangs->no_transaksi = $request->no_transaksi;
-        $hutangpiutangs->jenis = 'Piutang';
-        $hutangpiutangs->tanggal = $request->tanggal;
-        $hutangpiutangs->name = $request->name;
-        $hutangpiutangs->pesanan = $request->pesanan;
-        $hutangpiutangs->quantity = $request->quantity;
-        $hutangpiutangs->nilai = $hargaTot;
-        $hutangpiutangs->invoice = $request->invoice;
-        $hutangpiutangs->save();
+            $hutangpiutangs = new Hutangpiutang();
+            $hutangpiutangs->no_transaksi = $request->no_transaksi;
+            $hutangpiutangs->jenis = 'Piutang';
+            $hutangpiutangs->tanggal = $request->tanggal;
+            $hutangpiutangs->name = $request->name;
+            $hutangpiutangs->pesanan = $request->pesanan;
+            $hutangpiutangs->quantity = $request->quantity;
+            $hutangpiutangs->nilai = $hargaTot;
+            $hutangpiutangs->invoice = $request->invoice;
+            $hutangpiutangs->save();
+        }
     }
 
     public function updatepesananpenjualan(Request $request)
