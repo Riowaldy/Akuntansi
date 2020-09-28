@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div id="loading">
+    <img id="loading-image" src="{{ asset('custom/img/loading2.gif') }}" alt="Loading..." />
+</div>
 <div class="main-content" id="main-pembayaranpembelian">
     <section class="section">
         <div class="section-header">
@@ -19,56 +22,20 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped" id="table-1">
+                                <table class="table table-striped" id="tablepembayaranpembelian">
                                     <thead>
                                         <tr>
+                                            <th class="text-center">No</th>
                                             <th class="text-center">Nomor Transaksi</th>
-                                            <th class="text-center">Kode Akun</th>
-                                            <th class="text-center">Nama Akun</th>
                                             <th class="text-center">Tanggal</th>
-                                            <th class="text-center">Kas/Bank</th>
-                                            <th class="text-center">Keterangan</th>
-                                            <th class="text-center">Jumlah</th>
+                                            <th class="text-center">Nama Supplier</th>
+                                            <th class="text-center">Pesanan</th>
+                                            <th class="text-center">Kuantitas</th>
+                                            <th class="text-center">Nilai Transaksi</th>
+                                            <th class="text-center">Invoice</th>
+                                            <th class="text-center">Status</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>110101.07.20.1</td>
-                                            <td>11041</td>
-                                            <td>Persediaan</td>
-                                            <td>05/08/2020</td>
-                                            <td>Kas</td>
-                                            <td>Bahan Baku Terigu 20 kg</td>
-                                            <td>520.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>110101.07.20.1</td>
-                                            <td>11041</td>
-                                            <td>Persediaan</td>
-                                            <td>05/08/2020</td>
-                                            <td>Kas</td>
-                                            <td>Bahan Baku Terigu 20 kg</td>
-                                            <td>520.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>110101.07.20.1</td>
-                                            <td>11041</td>
-                                            <td>Persediaan</td>
-                                            <td>05/08/2020</td>
-                                            <td>Kas</td>
-                                            <td>Bahan Baku Terigu 20 kg</td>
-                                            <td>520.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>110101.07.20.1</td>
-                                            <td>11041</td>
-                                            <td>Persediaan</td>
-                                            <td>05/08/2020</td>
-                                            <td>Kas</td>
-                                            <td>Bahan Baku Terigu 20 kg</td>
-                                            <td>520.000</td>
-                                        </tr>
-                                    </tbody>
                                 </table>
                             </div>
                         </div>    
@@ -104,4 +71,40 @@
         </div>
     </section>
 </div>
+@endsection
+
+@section('form')
+
+@endsection
+
+@section('script')
+<style>
+    .dataTables_filter{
+        margin-top:4px;
+    }
+    #loading {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        display: block;
+        opacity: 0.7;
+        background-color: #fff;
+        z-index: 99;
+        text-align: center;
+    }
+
+    #loading-image {
+        position: absolute;
+        top: 150px;
+        left: 600px;
+        z-index: 100;
+    }
+
+    span.select2-selection__rendered{
+        padding:7px 0 0 13px !important;
+    }
+</style>
+<script src="{{ asset('custom/js/pembayaranpembelian.js') }}"></script>
 @endsection

@@ -70,6 +70,7 @@ Route::get('/pesananpembelian/getdropnama', 'PesananPembelianController@getdropn
 Route::get('/pesananpembelian/getdroppesanan', 'PesananPembelianController@getdroppesanan')->name('getdroppesanan');
 
 Route::get('/pembayaranpembelian', 'PembayaranPembelianController@index')->name('pembayaranpembelian');
+Route::get('/pembayaranpembelian/getpembayaranpembelian', 'PembayaranPembelianController@getpembayaranpembelian')->name('getpembayaranpembelian');
 
 Route::get('/penerimaanbarang', 'PenerimaanBarangController@index')->name('penerimaanbarang');
 
