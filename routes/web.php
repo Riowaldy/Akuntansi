@@ -65,6 +65,7 @@ Route::delete('/datasupplier/deletedatasupplier', 'DataSupplierController@delete
 Route::get('/pesananpembelian', 'PesananPembelianController@index')->name('pesananpembelian');
 Route::get('/pesananpembelian/getpesananpembelian', 'PesananPembelianController@getpesananpembelian')->name('getpesananpembelian');
 Route::post('/pesananpembelian/addpesananpembelian', 'PesananPembelianController@addpesananpembelian')->name('addpesananpembelian');
+Route::post('/pesananpembelian/updatepesananpembelian', 'PesananPembelianController@updatepesananpembelian')->name('updatepesananpembelian');
 Route::get('/pesananpembelian/getdropnama', 'PesananPembelianController@getdropnama')->name('getdropnama');
 Route::get('/pesananpembelian/getdroppesanan', 'PesananPembelianController@getdroppesanan')->name('getdroppesanan');
 

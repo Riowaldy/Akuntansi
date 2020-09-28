@@ -206,6 +206,74 @@ var pesananpembelian = function () {
         })
     };
 
+    var editDataPesananPembelian = function () {
+        $('#tablepesananpembelian').on('click', '#btn-edit-pesananpembelian', function () {
+            var baris = $(this).parents('tr')[0];
+            var table = $('#tablepesananpembelian').DataTable();
+            var data = table.row(baris).data();
+            id = data.id;
+            no_transaksi = data.no_transaksi;
+            tanggal = data.tanggal;
+            name = data.name;
+            pesanan = data.pesanan;
+            quantity = data.quantity;
+            nilai = data.nilai;
+            invoice = data.invoice;
+            swal({
+                title: 'Apakah Anda Yakin?',
+                text: 'Mengubah Data Pesanan Pembelian Ini',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#2196F3',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak',
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                showLoaderOnConfirm: true
+            })
+            .then((isConfirm) => {
+                window.onkeydown = null;
+                window.onfocus = null;
+                if (isConfirm) {
+                    var updateData = {
+                        id: id,
+                        no_transaksi: no_transaksi,
+                        tanggal: tanggal,
+                        name: name,
+                        pesanan: pesanan,
+                        quantity: quantity,
+                        nilai: nilai,
+                        invoice: invoice,
+                    };
+                    $.ajax({
+                        url : "/pesananpembelian/updatepesananpembelian",
+                        type : "POST",
+                        data : updateData,
+                        success: function(res){
+                            $('#tablepesananpembelian').DataTable().ajax.reload();
+                            swal({
+                                title: "Success!",
+                                text : "Data Berhasil Dihapus",
+                                confirmButtonColor: "#66BB6A",
+                                type : "success",
+                            });
+                        },
+                        error : function(res){
+                            swal({
+                                title: 'Error',
+                                text : data.message,
+                                type : "error",
+                                confirmButtonColor: "#EF5350",
+                            });
+                        }
+                    })
+                } else {
+                    swal("Aksi Dibatalkan!");
+                }
+            });
+        });
+    };
+
     return {
         init: function () {
             getPesananPembelian();
@@ -213,9 +281,7 @@ var pesananpembelian = function () {
             tambahPesananPembelian();
             getDropNama();
             getDropPesanan();
-            // getDataEditPesananPembelian();
-            // editPesananPembelian();
-            // deletePesananPembelian();
+            editDataPesananPembelian();
         }
     };
 }();
