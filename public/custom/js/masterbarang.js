@@ -179,7 +179,6 @@ var masterbarang = function () {
             var table = $('#tablemasterbarang').DataTable();
             var data = table.row(baris).data();
             id = data.id;
-            $('#id_barang').val(data.id_barang);
             $('#nama_barang').val(data.name);
             $('#harga_barang').val(data.harga);
             $('#satuan_barang').val(data.satuan);
@@ -208,37 +207,26 @@ var masterbarang = function () {
                 if (isConfirm) {
                     var update = {
                         id: id,
-                        id_barang: $('#id_barang').val(),
                         name: $('#nama_barang').val(),
                         harga: $('#harga_barang').val(),
                         satuan: $('#satuan_barang').val(),
                     };
-                    if(update.id_barang == ""){
-                        $("#id_barang_error").html("<strong>Data ID Barang Kosong</strong>");
-                        $("#nama_barang_error").html("");
-                        $("#harga_barang_error").html("");
-                        $("#satuan_barang_error").html("");
-                    }
-                    else if(update.name == ""){
+                    if(update.name == ""){
                         $("#nama_barang_error").html("<strong>Data Nama Kosong</strong>");
-                        $("#id_barang_error").html("");
                         $("#harga_barang_error").html("");
                         $("#satuan_barang_error").html("");
                     }
                     else if(update.harga == ""){
                         $("#harga_barang_error").html("<strong>Data Harga Kosong</strong>");
-                        $("#id_barang_error").html("");
                         $("#nama_barang_error").html("");
                         $("#satuan_barang_error").html("");
                     }
                     else if(update.satuan == ""){
                         $("#satuan_barang_error").html("<strong>Data Satuan Kosong</strong>");
-                        $("#id_barang_error").html("");
                         $("#nama_barang_error").html("");
                         $("#harga_barang_error").html("");
                     }
                     else{
-                        $("#id_barang_error").html("");
                         $("#nama_barang_error").html("");
                         $("#harga_barang_error").html("");
                         $("#satuan_barang_error").html("");
@@ -247,18 +235,14 @@ var masterbarang = function () {
                             type : "POST",
                             data : update,
                             success: function(res){
-                                if(res == 'id_barangerr'){
-                                    $("#id_barang_error").html("<strong>Data ID Ada</strong>");
-                                }else{
-                                    $('#tablemasterbarang').DataTable().ajax.reload();
-                                    swal({
-                                        title: "Success!",
-                                        text : "Data Berhasil Diubah",
-                                        confirmButtonColor: "#66BB6A",
-                                        type : "success",
-                                    });
-                                    $('#form-edit-masterbarang').modal('hide');
-                                }
+                                $('#tablemasterbarang').DataTable().ajax.reload();
+                                swal({
+                                    title: "Success!",
+                                    text : "Data Berhasil Diubah",
+                                    confirmButtonColor: "#66BB6A",
+                                    type : "success",
+                                });
+                                $('#form-edit-masterbarang').modal('hide');
                             },
                             error : function(res){
                                 swal({

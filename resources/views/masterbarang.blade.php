@@ -118,17 +118,12 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header" style="background-color: rgba(0, 120, 255, 1); color:white;">
-            <h5 class="modal-title">Tambah Data Barang</h5>
+            <h5 class="modal-title">Edit Data Barang</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
-            <div class="form-group">
-                <label for="id_barang" class="control-label col-lg-2">ID</label>
-                <input type="text" name="id_barang" class="form-control" id="id_barang" required autocomplete="off">
-                <span class="help-block" id="id_barang_error"></span>
-            </div>
             <div class="form-group">
                 <label for="nama_barang" class="control-label col-lg-2">Nama</label>
                 <input type="text" name="nama_barang" class="form-control" id="nama_barang" required autocomplete="off">

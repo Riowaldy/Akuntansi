@@ -60,21 +60,15 @@ class MasterBarangController extends Controller
     public function updatemasterbarang(Request $request)
     {
         $this->validate($request, array(
-            'id_barang' => 'required|max:255',
             'name' => 'required|max:255',
             'harga' => 'required|max:255',
             'satuan' => 'required|max:255'
         ));
-        if (Barang::where('id_barang', '=', $request->id_barang)->where('id', '!=', $request->id)->count() > 0) {
-            return 'id_barangerr';
-        }else{
-            $barangs = Barang::find($request->id);
-            $barangs->id_barang = $request->id_barang;
-            $barangs->name = $request->name;
-            $barangs->harga = $request->harga;
-            $barangs->satuan = $request->satuan;
-            $barangs->save();
-        }
+        $barangs = Barang::find($request->id);
+        $barangs->name = $request->name;
+        $barangs->harga = $request->harga;
+        $barangs->satuan = $request->satuan;
+        $barangs->save();
     }
 
     public function deletemasterbarang(Request $request)
