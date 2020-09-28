@@ -131,8 +131,10 @@ var pesananpembelian = function () {
                             type : "POST",
                             data : addData,
                             success: function(res){
-                                console.log(res);
-                                $('#tablepesananpembelian').DataTable().ajax.reload();
+                                if(res == 'no_transaksierr'){
+                                    $("#notrans_pesananpembelian_error_tambah").html("<strong>Data No Transaksi Sudah Ada</strong>");
+                                }else{
+                                    $('#tablepesananpembelian').DataTable().ajax.reload();
                                     swal({
                                         title: "Success!",
                                         text : "Data Berhasil Ditambahkan",
@@ -146,6 +148,8 @@ var pesananpembelian = function () {
                                     $("#pesanan_pesananpembelian_tambah").val("");
                                     $("#quantity_pesananpembelian_tambah").val("");
                                     $("#invoice_pesananpembelian_tambah").val("");
+                                }
+                                
                             },
                             error : function(res){
                                 swal({
