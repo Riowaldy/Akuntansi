@@ -75,6 +75,7 @@ Route::get('/pembayaranpembelian/getpembayaranpembelian', 'PembayaranPembelianCo
 Route::post('/pembayaranpembelian/updatepembayaranpembelian', 'PembayaranPembelianController@updatepembayaranpembelian')->name('updatepembayaranpembelian');
 
 Route::get('/penerimaanbarang', 'PenerimaanBarangController@index')->name('penerimaanbarang');
+Route::get('/penerimaanbarang/getpenerimaanbarang', 'PenerimaanBarangController@getpenerimaanbarang')->name('getpenerimaanbarang');
 
 Route::get('/masterbahan', 'MasterBahanController@index')->name('masterbahan');
 Route::get('/masterbahan/getmasterbahan', 'MasterBahanController@getmasterbahan')->name('getmasterbahan');
