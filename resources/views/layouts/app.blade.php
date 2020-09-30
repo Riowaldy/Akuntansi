@@ -117,6 +117,7 @@
     <script src="{{ asset('custom/library/pooper/pooper.js') }}"></script>
     <script src="{{ asset('custom/library/bootstrap4/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('custom/library/chartjs/dist/chart.min.js') }}"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
     <script src="{{ asset('custom/library/moment/moment.js') }}"></script>
     <script src="{{ asset('custom/library/datatables/datatables.js') }}"></script>
     <script src="{{ asset('custom/library/datatables/DataTables-1.10.21/js/dataTables.bootstrap4.js') }}"></script>

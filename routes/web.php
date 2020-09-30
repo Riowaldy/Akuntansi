@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/getmenu', 'HomeController@getMenu')->name('getmenu');
+Route::get('/home/getdata', 'HomeController@getData')->name('getdata');
 
 Route::get('/penerimaan', 'PenerimaanController@index')->name('penerimaan');
 Route::get('/penerimaan/getpenerimaan', 'PenerimaanController@getpenerimaan')->name('getpenerimaan');

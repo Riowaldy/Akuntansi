@@ -48,7 +48,6 @@ var penerimaanbarang = function () {
     return {
         init: function () {
             getPenerimaanBarang();
-            // editDataPenerimaanBarang();
         }
     };
 }();

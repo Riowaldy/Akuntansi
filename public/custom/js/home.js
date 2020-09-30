@@ -28,9 +28,34 @@ var Home = function () {
             }
         });
     };
+
+    var dataNilai = function(){
+        $.ajax({
+            url : "/home/getdata",
+            type : "GET",
+            success: function(res){
+                var penerimaan = res.penerimaan[0].nilai == null ? 0 : parseInt(res.penerimaan[0].nilai);
+                var pembayaran = res.pembayaran[0].nilai == null ? 0 : parseInt(res.pembayaran[0].nilai);
+                var kasbank = parseInt(penerimaan) + parseInt(pembayaran);
+                var kasbank = kasbank == null ? 0 : parseInt(kasbank);
+                var hutang = res.hutang[0].nilai == null ? 0 : parseInt(res.hutang[0].nilai);
+                var piutang = res.piutang[0].nilai == null ? 0 : parseInt(res.piutang[0].nilai);
+
+                $("#penerimaan").html('Rp.'+penerimaan);
+                $("#pembayaran").html('Rp.'+pembayaran);
+                $("#kasbank").html('Rp.'+kasbank);
+                $("#hutang").html('Rp.'+hutang);
+                $("#piutang").html('Rp.'+piutang);
+            },
+            error : function(res){
+                
+            }
+        })
+    }
     return {
         init: function () {
             myChart();
+            dataNilai();
         }
     };
 }();

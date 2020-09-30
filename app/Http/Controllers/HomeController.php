@@ -109,4 +109,20 @@ class HomeController extends Controller
         ");
         return $menus;
     }
+
+    public function getData() {
+        $data['penerimaan'] = DB::select("
+            select sum(nilai) as nilai from penerimaans
+        ");
+        $data['pembayaran'] = DB::select("
+            select sum(nilai) as nilai from pembayarans
+        ");
+        $data['hutang'] = DB::select("
+            select sum(nilai) as nilai from hutangpiutangs where jenis = 'Hutang'
+        ");
+        $data['piutang'] = DB::select("
+            select sum(nilai) as nilai from hutangpiutangs where jenis = 'Piutang'
+        ");
+        return $data;
+    }
 }

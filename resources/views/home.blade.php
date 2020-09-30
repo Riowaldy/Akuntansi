@@ -19,10 +19,10 @@
               </div>
               <div class="card-wrap">
                 <div class="card-header">
-                  <h4>Pemasukan</h4>
+                  <h4>Penerimaan</h4>
                 </div>
                 <div class="card-body" style="margin-top: 12px;">
-                  <h5>Rp.1500000</h5>
+                  <h5 id="penerimaan">...</h5>
                 </div>
               </div>
             </div>
@@ -34,10 +34,10 @@
               </div>
               <div class="card-wrap">
                 <div class="card-header">
-                  <h4>Pengeluaran</h4>
+                  <h4>Pembayaran</h4>
                 </div>
                 <div class="card-body" style="margin-top: 12px;">
-                  <h5>Rp.500000</h5>
+                  <h5 id="pembayaran">...</h5>
                 </div>
               </div>
             </div> 
@@ -52,7 +52,7 @@
                   <h4>Kas/Bank</h4>
                 </div>
                 <div class="card-body" style="margin-top: 12px;">
-                  <h5>Rp.2000000</h5>
+                  <h5 id="kasbank">...</h5>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
                   <h4>Hutang</h4>
                 </div>
                 <div class="card-body" style="margin-top: 12px;">
-                  <h5>Rp.200000</h5>
+                  <h5 id="hutang">...</h5>
                 </div>
               </div>
               <div class="card-icon shadow-primary bg-primary" style="margin-left: -75px;">
@@ -80,7 +80,7 @@
                   <h4>Piutang</h4>
                 </div>
                 <div class="card-body" style="margin-top: 12px;">
-                  <h5>Rp.600000</h5>
+                  <h5 id="piutang">...</h5>
                 </div>
               </div>
             </div>
@@ -191,6 +191,10 @@
       </div>
     </section>
 </div>
+@endsection
+
+@section('form')
+
 @endsection
 
 @section('script')
