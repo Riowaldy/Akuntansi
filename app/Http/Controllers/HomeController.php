@@ -123,6 +123,15 @@ class HomeController extends Controller
         $data['piutang'] = DB::select("
             select sum(nilai) as nilai from hutangpiutangs where jenis = 'Piutang'
         ");
+        $data['terjual'] = DB::select("
+            select name, terjual from barangs order by terjual desc limit 5
+        ");
+        $data['pelanggan'] = DB::select("
+            select pelanggans.name, sum(pengirimanpenjualans.nilai) as nilai from pengirimanpenjualans 
+            join pelanggans on pelanggans.id = pengirimanpenjualans.name
+            group by pelanggans.name 
+            order by nilai desc
+        ");
         return $data;
     }
 }
