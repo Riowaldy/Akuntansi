@@ -164,8 +164,8 @@
 
     #loading-image {
         position: absolute;
-        top: 150px;
-        left: 600px;
+        top: 40%;
+        left: 50%;
         z-index: 100;
     }
 </style>

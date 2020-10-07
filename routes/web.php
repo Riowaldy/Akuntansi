@@ -91,6 +91,7 @@ Route::post('/masterbarang/updatemasterbarang', 'MasterBarangController@updatema
 Route::delete('/masterbarang/deletemasterbarang', 'MasterBarangController@deletemasterbarang')->name('deletemasterbarang');
 
 Route::get('/pemakaian', 'PemakaianController@index')->name('pemakaian');
+Route::get('/pemakaian/getmastertambahan', 'PemakaianController@getmastertambahan')->name('getmastertambahan');
 
 Route::get('/bukubesar', 'BukuBesarController@index')->name('bukubesar');
 
