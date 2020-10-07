@@ -20,6 +20,9 @@
                         <div class="card-header">
                             <h4>Tabel Master Tambahan</h4>
                         </div>
+                        <div class="d-flex flex-row-reverse" style="margin: 0 25px 0 25px;">
+                            <a href="#tambah" class="btn btn-primary btn-raised btn-xs col-lg-1" data-toggle="modal" data-target="#form-tambah-mastertambahan" id="btn-tambah-mastertambahan"><i class=""></i>Tambah</a>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped" id="tablemastertambahan">
@@ -82,22 +85,23 @@
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label for="id_tambahan_tambah" class="control-label col-lg-2">ID</label>
+                <label for="id_tambahan_tambah" class="control-label col-lg-12">ID</label>
                 <input type="text" name="id_tambahan_tambah" class="form-control" id="id_tambahan_tambah" required autocomplete="off">
                 <span class="help-block" id="id_tambahan_error_tambah"></span>
             </div>
             <div class="form-group">
-                <label for="nama_tambahan_tambah" class="control-label col-lg-2">Nama</label>
+                <label for="nama_tambahan_tambah" class="control-label col-lg-12">Nama</label>
                 <input type="text" name="nama_tambahan_tambah" class="form-control" id="nama_tambahan_tambah" required autocomplete="off">
                 <span class="help-block" id="nama_tambahan_error_tambah"></span>
             </div>
             <div class="form-group">
-                <label for="akun_tambahan_tambah" class="control-label col-lg-2">Akun Perkiraan</label>
-                <input type="text" name="akun_tambahan_tambah" class="form-control" id="akun_tambahan_tambah" required autocomplete="off">
+                <label for="akun_tambahan_tambah" class="control-label col-lg-12">Akun Perkiraan</label>
+                <select class="akun_tambahan_tambah" id="akun_tambahan_tambah">
+                </select>
                 <span class="help-block" id="akun_tambahan_error_tambah"></span>
             </div>
             <div class="form-group">
-                <label for="harga_tambahan_tambah" class="control-label col-lg-2">Harga</label>
+                <label for="harga_tambahan_tambah" class="control-label col-lg-12">Harga</label>
                 <input type="text" name="harga_tambahan_tambah" class="form-control" id="harga_tambahan_tambah" required autocomplete="off">
                 <span class="help-block" id="harga_tambahan_error_tambah"></span>
             </div>
@@ -168,6 +172,10 @@
         top: 40%;
         left: 50%;
         z-index: 100;
+    }
+
+    #select2-akun_tambahan_tambah-container{
+        margin: 7px 0 0 6px;
     }
 </style>
 <script src="{{ asset('custom/js/tambahan.js') }}"></script>

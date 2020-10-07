@@ -168,6 +168,10 @@
         left: 50%;
         z-index: 100;
     }
+
+    #select2-role_roleuser-container{
+        margin: 7px 0 0 6px;
+    }
 </style>
 <script src="{{ asset('custom/js/settingrole.js') }}"></script>
 @endsection
