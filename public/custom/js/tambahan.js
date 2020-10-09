@@ -153,14 +153,119 @@ var mastertambahan = function () {
         });
     };
 
+    var getDataEditMasterTambahan = function(){
+        $('#tablemastertambahan').on('click', '#btn-edit-mastertambahan', function () {
+            var baris = $(this).parents('tr')[0];
+            var table = $('#tablemastertambahan').DataTable();
+            var data = table.row(baris).data();
+            idtambahan = data.id;
+            $('#nama_tambahan').val(data.name);
+            akunperkiraan = data.akunperkiraan;
+            $('#harga_tambahan').val(data.harga);
+            getDropEditAkunPerkiraan();
+            $('#btn-simpan-editmastertambahan').html('Simpan');
+            $('#btn-reset-editmastertambahan').html('Batal');
+        });
+    };
+
+    var getDropEditAkunPerkiraan = function(){
+        $(".akun_tambahan").select2();
+        $.ajax({
+            type: 'GET',
+            url: '/pemakaian/getdropeditakunperkiraan',
+            contentType: 'application/json;charset=utf-8',
+            data: {
+                akunperkiraan : akunperkiraan
+            },
+            async: false,
+            success: function (data) {
+                $('#akun_tambahan').append(
+                    '<option value="'+ idtambahan +'" selected>'+ akunperkiraan +'</option>'
+                );
+                data.forEach(function(entry) {
+                    console.log(entry.name);
+                    $('#akun_tambahan').append(
+                        '<option value="'+ entry.id +'">'+ entry.name +'</option>'
+                    );
+                });
+            }
+        })
+    };
+
+    var editDataMasterTambahan = function () {
+        $('#btn-simpan-editmastertambahan').click(function(){
+            swal({
+                title: 'Apakah Anda Yakin?',
+                text: 'Menyimpan Data Master Tambahan Ini',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#2196F3',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak',
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                showLoaderOnConfirm: true
+            })
+            .then((isConfirm) => {
+                window.onkeydown = null;
+                window.onfocus = null;
+                if (isConfirm) {
+                    var update = {
+                        id: id,
+                        name: $('#nama_tambahan').val(),
+                        akunperkiraan: $('#akun_tambahan').val(),
+                        harga: $('#harga_tambahan').val(),
+                    };
+                    if(update.name == ""){
+                        $("#nama_tambahan_error").html("<strong>Data Nama Kosong</strong>");
+                    } else if(update.akunperkiraan == ""){
+                        $("#akun_tambahan_error").html("<strong>Data Akun Perkiraan Kosong</strong>");
+                    } else if(update.harga == ""){
+                        $("#harga_tambahan_error").html("<strong>Data Harga Kosong</strong>");
+                    }
+                    else{
+                        $("#nama_tambahan_error").html("");
+                        $.ajax({
+                            url : "/pemakaian/updatemastertambahan",
+                            type : "POST",
+                            data : update,
+                            success: function(){
+                                $('#tablemastertambahan').DataTable().ajax.reload();
+                                swal({
+                                    title: "Success!",
+                                    text : "Data Berhasil Diubah",
+                                    confirmButtonColor: "#66BB6A",
+                                    type : "success",
+                                });
+                                $('#form-edit-mastertambahan').modal('hide');
+                            },
+                            error : function(data){
+                                swal({
+                                    title: 'Error',
+                                    text : data.message,
+                                    type : "error",
+                                    confirmButtonColor: "#EF5350",
+                                });
+                                $('#form-edit-mastertambahan').modal('hide');
+                            }
+                        });
+                    }
+                } else {
+                    swal("Aksi Dibatalkan!");
+                    $('#form-edit-mastertambahan').modal('hide');
+                }
+            });
+        });
+    };
+
     return {
         init: function () {
             getMasterTambahan();
             // resetData();
             getDropAkunperkiraan();
             tambahMasterTambahan();
-            // getDataEditMasterTambahan();
-            // editMasterTambahan();
+            getDataEditMasterTambahan();
+            editDataMasterTambahan();
             // deleteMasterTambahan();
         }
     };

@@ -125,17 +125,18 @@
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label for="nama_tambahan" class="control-label col-lg-2">Nama</label>
+                <label for="nama_tambahan" class="control-label col-lg-12">Nama</label>
                 <input type="text" name="nama_tambahan" class="form-control" id="nama_tambahan" required autocomplete="off">
                 <span class="help-block" id="nama_tambahan_error"></span>
             </div>
             <div class="form-group">
-                <label for="akun_tambahan" class="control-label col-lg-2">Akun Perkiraan</label>
-                <input type="text" name="akun_tambahan" class="form-control" id="akun_tambahan" required autocomplete="off">
+                <label for="akun_tambahan" class="control-label col-lg-12">Akun Perkiraan</label>
+                <select class="akun_tambahan" id="akun_tambahan">
+                </select>
                 <span class="help-block" id="akun_tambahan_error"></span>
             </div>
             <div class="form-group">
-                <label for="harga_tambahan" class="control-label col-lg-2">Harga</label>
+                <label for="harga_tambahan" class="control-label col-lg-12">Harga</label>
                 <input type="text" name="harga_tambahan" class="form-control" id="harga_tambahan" required autocomplete="off">
                 <span class="help-block" id="harga_tambahan_error"></span>
             </div>
@@ -175,6 +176,10 @@
     }
 
     #select2-akun_tambahan_tambah-container{
+        margin: 7px 0 0 6px;
+    }
+
+    #select2-akun_tambahan-container{
         margin: 7px 0 0 6px;
     }
 </style>

@@ -64,4 +64,27 @@ class PemakaianController extends Controller
                                     ->get();
         return $akunperkiraans;
     }
+
+    public function getdropeditakunperkiraan(Request $request)
+    {
+        $akunperkiraans = DB::table('akunperkiraans')->select('id','name')
+                                    ->where('name','!=',$request->akunperkiraan)
+                                    ->orderBy('id','asc')
+                                    ->get();
+        return $akunperkiraans;
+    }
+    
+    public function updatemastertambahan(Request $request)
+    {
+        $this->validate($request, array(
+            'name' => 'required|max:255',
+            'akunperkiraan' => 'required|max:255',
+            'harga' => 'required|max:255'
+        ));
+        $tambahans = Tambahan::find($request->id);
+        $tambahans->name = $request->name;
+        $tambahans->akunperkiraan = $request->akunperkiraan;
+        $tambahans->harga = $request->harga;
+        $tambahans->save();
+    }
 }

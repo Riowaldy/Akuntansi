@@ -93,7 +93,9 @@ Route::delete('/masterbarang/deletemasterbarang', 'MasterBarangController@delete
 Route::get('/pemakaian', 'PemakaianController@index')->name('pemakaian');
 Route::get('/pemakaian/getmastertambahan', 'PemakaianController@getmastertambahan')->name('getmastertambahan');
 Route::get('/pemakaian/getdropakunperkiraan', 'PemakaianController@getdropakunperkiraan')->name('getdropakunperkiraan');
+Route::get('/pemakaian/getdropeditakunperkiraan', 'PemakaianController@getdropeditakunperkiraan')->name('getdropeditakunperkiraan');
 Route::post('/pemakaian/addmastertambahan', 'PemakaianController@addmastertambahan')->name('addmastertambahan');
+Route::post('/pemakaian/updatemastertambahan', 'PemakaianController@updatemastertambahan')->name('updatemastertambahan');
 
 Route::get('/bukubesar', 'BukuBesarController@index')->name('bukubesar');
 
