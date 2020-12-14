@@ -60,3 +60,40 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Tentang Aplikasi
 
 Aplikasi Akuntansi Berbasis Web Dengan Framework Laravel
+
+## List Menu
+| Menu | Sub Menu |
+| --- | --- |
+| `Dashboard` | Home |
+| `Kas /Bank` | Penerimaan |
+|  | Pembayaran |
+| `Buku Besar` | Akun Perkiraan |
+|  | Hutang Piutang |
+|  | Jurnal |
+| `Penjualan` | Data Pelanggan |
+|  | Pesanan Penjualan |
+|  | Penerimaan Penjualan |
+|  | Pengiriman Penjualan |
+| `Pembelian` | Data Supplier |
+|  | Pesanan Pembelian |
+|  | Pembayaran Pembelian |
+|  | Penerimaan Barang |
+| `Persediaan` | Master Bahan |
+|  | Master Barang |
+|  | Master Tambahan |
+| `Laporan` | Buku Besar |
+|  | Laba Rugi |
+|  | Neraca Saldo |
+|  | Neraca |
+| `Setting` | User |
+|  | Menu |
+|  | Role |
+
+## Todo
+- [] Ganti format penulian uang (currency)
+- [] Ganti format loading (dengan js)
+- [] Menu Jurnal
+- [] Laporan Buku Besar
+- [] Laporan Laba Rugi
+- [] Neraca Saldo
+- [] Neraca

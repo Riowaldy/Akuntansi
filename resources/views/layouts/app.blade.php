@@ -103,7 +103,7 @@
 
             <footer class="main-footer">
               <div class="footer-left">
-                Copyright &copy; 2020 <div class="bullet"></div>By str production;
+                Copyright &copy; 2020 <div class="bullet"></div>By Riowaldy Indrawan;
               </div>
               <div class="footer-right">
                 1.0.0
