@@ -4,7 +4,7 @@
 <div id="loading">
     <img id="loading-image" src="{{ asset('custom/img/loading2.gif') }}" alt="Loading..." />
 </div>
-<div class="main-content" id="main-pesananpembelian">
+<div class="main-content" id="main-pesananpembelian" style="display:none;">
     <section class="section">
         <div class="section-header">
           <h1>Pesanan Pembelian</h1>
@@ -48,7 +48,7 @@
         </div>
     </section>
 </div>
-<div class="main-content" id="main-pesananpembelian-err">
+<div class="main-content" id="main-pesananpembelian-err" style="display:none;">
     <section class="section">
         <div class="section-header">
             <h1>404</h1>

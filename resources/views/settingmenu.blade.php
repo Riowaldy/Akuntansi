@@ -4,7 +4,7 @@
 <div id="loading">
     <img id="loading-image" src="{{ asset('custom/img/loading2.gif') }}" alt="Loading..." />
 </div>
-<div class="main-content" id="main-settingmenu">
+<div class="main-content" id="main-settingmenu" style="display:none;">
     <section class="section">
         <div class="section-header">
           <h1>Setting Menu</h1>
@@ -63,7 +63,7 @@
         </div>
     </section>
 </div>
-<div class="main-content" id="main-settingmenu-err">
+<div class="main-content" id="main-settingmenu-err" style="display:none;">
     <section class="section">
         <div class="section-header">
             <h1>404</h1>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="main-content" id="main-jurnal">
+<div class="main-content" id="main-jurnal" style="display:none;">
     <section class="section">
         <div class="section-header">
           <h1>Jurnal</h1>
@@ -78,7 +78,7 @@
         </div>
     </section>
 </div>
-<div class="main-content" id="main-jurnal-err">
+<div class="main-content" id="main-jurnal-err" style="display:none;">
     <section class="section">
         <div class="section-header">
             <h1>404</h1>

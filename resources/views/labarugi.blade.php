@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="main-content" id="main-labarugi">
+<div class="main-content" id="main-labarugi" style="display:none;">
     <section class="section">
         <div class="section-header">
           <h1>Laporan Laba Rugi</h1>
@@ -78,7 +78,7 @@
         </div>
     </section>
 </div>
-<div class="main-content" id="main-labarugi-err">
+<div class="main-content" id="main-labarugi-err" style="display:none;">
     <section class="section">
         <div class="section-header">
             <h1>404</h1>

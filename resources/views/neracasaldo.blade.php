@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="main-content" id="main-neracasaldo">
+<div class="main-content" id="main-neracasaldo" style="display:none;">
     <section class="section">
         <div class="section-header">
           <h1>Laporan Neraca Saldo</h1>
@@ -78,7 +78,7 @@
         </div>
     </section>
 </div>
-<div class="main-content" id="main-neracasaldo-err">
+<div class="main-content" id="main-neracasaldo-err" style="display:none;">
     <section class="section">
         <div class="section-header">
             <h1>404</h1>
