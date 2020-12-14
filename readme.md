@@ -91,7 +91,12 @@ Aplikasi Akuntansi Berbasis Web Dengan Framework Laravel
 
 ## Todo
 - [ ] Ganti format penulian uang (currency)
+    - [ ] Dashboard
+    - [ ] Master Bahan
+    - [ ] Master Barang
+    - [ ] Pemakaian
 - [ ] Ganti format loading (dengan js)
+    - [ ] All Pages
 - [ ] Menu Jurnal
 - [ ] Laporan Buku Besar
 - [ ] Laporan Laba Rugi
