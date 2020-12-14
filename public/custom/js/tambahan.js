@@ -13,7 +13,11 @@ var mastertambahan = function () {
                 { 'data': 'id_tambahan'},
                 { 'data': 'name'},
                 { 'data': 'akunperkiraan' },
-                { 'data': 'harga' },
+                { 
+                    'data': 'harga', 
+                    'render': $.fn.dataTable.render.number( '.', ',', 2, 'Rp' )
+                
+                },
                 {
                     'render': function (data, type, full, meta) {
                         var html = '';

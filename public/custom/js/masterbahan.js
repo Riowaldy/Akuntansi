@@ -12,7 +12,11 @@ var masterbahan = function () {
                 { 'data': 'id'},
                 { 'data': 'id_bahan'},
                 { 'data': 'name'},
-                { 'data': 'harga' },
+                { 
+                    'data': 'harga', 
+                    'render': $.fn.dataTable.render.number( '.', ',', 2, 'Rp' )
+                
+                },
                 { 'data': 'stock' },
                 { 'data': 'satuan'},
                 {

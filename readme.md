@@ -90,11 +90,11 @@ Aplikasi Akuntansi Berbasis Web Dengan Framework Laravel
 |  | Role |
 
 ## Todo
-- [ ] Ganti format penulian uang (currency)
+- [x] Ganti format penulian uang (currency)
     - [x] Dashboard
-    - [ ] Master Bahan
-    - [ ] Master Barang
-    - [ ] Pemakaian
+    - [x] Master Bahan
+    - [x] Master Barang
+    - [x] Pemakaian
 - [ ] Ganti format loading (dengan js)
     - [ ] All Pages
 - [ ] Menu Jurnal
@@ -102,3 +102,5 @@ Aplikasi Akuntansi Berbasis Web Dengan Framework Laravel
 - [ ] Laporan Laba Rugi
 - [ ] Neraca Saldo
 - [ ] Neraca
+- [ ] Upload Foto Pelanggan
+- [ ] Upload Foto Barang
