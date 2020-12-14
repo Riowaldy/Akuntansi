@@ -91,7 +91,7 @@ Aplikasi Akuntansi Berbasis Web Dengan Framework Laravel
 
 ## Todo
 - [ ] Ganti format penulian uang (currency)
-    - [ ] Dashboard
+    - [x] Dashboard
     - [ ] Master Bahan
     - [ ] Master Barang
     - [ ] Pemakaian

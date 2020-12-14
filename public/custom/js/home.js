@@ -63,11 +63,11 @@ var Home = function () {
                 var hutang = res.hutang[0].nilai == null ? 0 : parseInt(res.hutang[0].nilai);
                 var piutang = res.piutang[0].nilai == null ? 0 : parseInt(res.piutang[0].nilai);
 
-                $("#penerimaan").html('Rp.'+penerimaan);
-                $("#pembayaran").html('Rp.'+pembayaran);
-                $("#kasbank").html('Rp.'+kasbank);
-                $("#hutang").html('Rp.'+hutang);
-                $("#piutang").html('Rp.'+piutang);
+                $("#penerimaan").html('Rp'+penerimaan.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "1."));
+                $("#pembayaran").html('Rp'+pembayaran.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "1."));
+                $("#kasbank").html('Rp'+kasbank.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "1."));
+                $("#hutang").html('Rp'+hutang.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "1."));
+                $("#piutang").html('Rp'+piutang.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "1."));
 
                 $('#terjual').append(
                     '<div class="col-lg-1"></div>'
