@@ -1,9 +1,15 @@
 var settingmenu = function () {
     var getDataSettingMenu = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablesettingmenu').DataTable({
             'ajax': {
                 'url': '/settingmenu/getsettingmenu',
-                'dataSrc': ''
+                'dataSrc': '',
+                'complete': function () {
+                    $(".card-body").LoadingOverlay("hide");
+                }
             },
             'columns': [
                 { 'data': 'id'},
@@ -34,12 +40,15 @@ var settingmenu = function () {
     };
 
     var getDataSettingMenurole = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablesettingmenurole').DataTable({
             'ajax': {
                 'url': '/settingmenu/getsettingmenurole',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

@@ -1,11 +1,14 @@
 var settingrole = function () {
     var getDataSettingRole = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablesettingrole').DataTable({
             'ajax': {
                 'url': '/settingrole/getsettingrole',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

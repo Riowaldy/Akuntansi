@@ -1,11 +1,14 @@
 var masterbarang = function () {
     var getMasterBarang = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablemasterbarang').DataTable({
             'ajax': {
                 'url': '/masterbarang/getmasterbarang',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

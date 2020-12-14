@@ -1,11 +1,14 @@
 var penerimaan = function () {
     var getPenerimaan = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablepenerimaan').DataTable({
             'ajax': {
                 'url': '/penerimaan/getpenerimaan',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

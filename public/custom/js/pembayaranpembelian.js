@@ -1,11 +1,14 @@
 var pembayaranpembelian = function () {
     var getPembayaranPembelian = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablepembayaranpembelian').DataTable({
             'ajax': {
                 'url': '/pembayaranpembelian/getpembayaranpembelian',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

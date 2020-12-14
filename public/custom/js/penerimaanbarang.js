@@ -1,11 +1,14 @@
 var penerimaanbarang = function () {
     var getPenerimaanBarang = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablepenerimaanbarang').DataTable({
             'ajax': {
                 'url': '/penerimaanbarang/getpenerimaanbarang',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

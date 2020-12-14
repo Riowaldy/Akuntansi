@@ -1,11 +1,14 @@
 var datasupplier = function () {
     var getDataSupplier = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tabledatasupplier').DataTable({
             'ajax': {
                 'url': '/datasupplier/getdatasupplier',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

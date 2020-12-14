@@ -1,11 +1,14 @@
 var akunperkiraan = function () {
     var getAkunPerkiraan = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tableakunperkiraan').DataTable({
             'ajax': {
                 'url': '/akunperkiraan/getakunperkiraan',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

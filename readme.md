@@ -96,7 +96,10 @@ Aplikasi Akuntansi Berbasis Web Dengan Framework Laravel
     - [x] Master Barang
     - [x] Pemakaian
 - [ ] Ganti format loading (dengan js)
-    - [ ] All Pages
+    - [x] Read Data All Pages
+    - [ ] Insert Data All Pages
+    - [ ] Update Data All Pages
+    - [ ] Delete Data All Pages
 - [ ] Menu Jurnal
 - [ ] Laporan Buku Besar
 - [ ] Laporan Laba Rugi

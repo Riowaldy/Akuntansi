@@ -1,11 +1,14 @@
 var pesananpembelian = function () {
     var getPesananPembelian = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablepesananpembelian').DataTable({
             'ajax': {
                 'url': '/pesananpembelian/getpesananpembelian',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

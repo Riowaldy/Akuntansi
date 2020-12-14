@@ -1,11 +1,14 @@
 var mastertambahan = function () {
     var getMasterTambahan = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablemastertambahan').DataTable({
             'ajax': {
                 'url': '/pemakaian/getmastertambahan',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

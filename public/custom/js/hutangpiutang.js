@@ -1,11 +1,14 @@
 var hutangpiutang = function () {
     var getHutangPiutang = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablehutangpiutang').DataTable({
             'ajax': {
                 'url': '/hutangpiutang/gethutangpiutang',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

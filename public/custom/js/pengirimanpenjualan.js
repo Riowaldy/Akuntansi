@@ -1,11 +1,14 @@
 var pengirimanpenjualan = function () {
     var getPengirimanpenjualan = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablepengirimanpenjualan').DataTable({
             'ajax': {
                 'url': '/pengirimanpenjualan/getpengirimanpenjualan',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

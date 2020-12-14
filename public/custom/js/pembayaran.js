@@ -1,11 +1,14 @@
 var pembayaran = function () {
     var getPembayaran = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablepembayaran').DataTable({
             'ajax': {
                 'url': '/pembayaran/getpembayaran',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

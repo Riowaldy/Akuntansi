@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="loading">
-    <img id="loading-image" src="{{ asset('custom/img/loading2.gif') }}" alt="Loading..." />
-</div>
 <div class="main-content" id="main-pemakaian" style="display:none;">
     <section class="section">
         <div class="section-header">
@@ -155,26 +152,6 @@
     .dataTables_filter{
         margin-top:4px;
     }
-    #loading {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        position: fixed;
-        display: block;
-        opacity: 0.7;
-        background-color: #fff;
-        z-index: 99;
-        text-align: center;
-    }
-
-    #loading-image {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        z-index: 100;
-    }
-
     #select2-akun_tambahan_tambah-container{
         margin: 7px 0 0 6px;
     }

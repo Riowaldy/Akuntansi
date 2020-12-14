@@ -1,11 +1,14 @@
 var settinguser = function () {
     var getDataSettingUser = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablesettinguser').DataTable({
             'ajax': {
                 'url': '/settinguser/getsettinguser',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

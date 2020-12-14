@@ -1,11 +1,14 @@
 var masterbahan = function () {
     var getMasterBahan = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tablemasterbahan').DataTable({
             'ajax': {
                 'url': '/masterbahan/getmasterbahan',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [

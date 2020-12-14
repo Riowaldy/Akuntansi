@@ -1,11 +1,14 @@
 var datapelanggan = function () {
     var getDataPelanggan = function(){
+        $(".card-body").LoadingOverlay("show", {
+            image: "../custom/img/loading2.gif"
+        });
         var t = $('#tabledatapelanggan').DataTable({
             'ajax': {
                 'url': '/datapelanggan/getdatapelanggan',
                 'dataSrc': '',
                 'complete': function () {
-                    $( "#loading" ).hide();
+                    $(".card-body").LoadingOverlay("hide");
                 }
             },
             'columns': [
