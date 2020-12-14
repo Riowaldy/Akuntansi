@@ -90,10 +90,10 @@ Aplikasi Akuntansi Berbasis Web Dengan Framework Laravel
 |  | Role |
 
 ## Todo
-- [] Ganti format penulian uang (currency)
-- [] Ganti format loading (dengan js)
-- [] Menu Jurnal
-- [] Laporan Buku Besar
-- [] Laporan Laba Rugi
-- [] Neraca Saldo
-- [] Neraca
+- [ ] Ganti format penulian uang (currency)
+- [ ] Ganti format loading (dengan js)
+- [ ] Menu Jurnal
+- [ ] Laporan Buku Besar
+- [ ] Laporan Laba Rugi
+- [ ] Neraca Saldo
+- [ ] Neraca
