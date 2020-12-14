@@ -111,6 +111,7 @@ class HomeController extends Controller
     }
 
     public function getData() {
+        $year = date("Y");
         $data['penerimaan'] = DB::select("
             select sum(nilai) as nilai from penerimaans
         ");
@@ -129,6 +130,7 @@ class HomeController extends Controller
         $data['pelanggan'] = DB::select("
             select pelanggans.name, sum(pengirimanpenjualans.nilai) as nilai from pengirimanpenjualans 
             join pelanggans on pelanggans.id = pengirimanpenjualans.name
+            where pengirimanpenjualans.created_at like '%$year%'
             group by pelanggans.name 
             order by nilai desc
         ");

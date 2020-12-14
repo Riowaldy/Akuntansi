@@ -1,5 +1,6 @@
 var Home = function () {
     var myChart = function(){
+        $('#chart-year').html('Periode '+new Date().getFullYear());
         $.ajax({
             url : "/home/getdata",
             type : "GET",

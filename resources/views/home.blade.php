@@ -90,7 +90,7 @@
               <div class="card-header">
                 <h4>Top 5 Customers</h4>
                 <div class="section-header-breadcrumb">
-                  <div class="breadcrumb-item active" style="margin-top:2px;">Periode 01-30 Agustus 2020</div>
+                  <div class="breadcrumb-item active" id="chart-year" style="margin-top:2px;"></div>
                 </div>
               </div>
               <div class="card-body">
